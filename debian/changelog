@@ -1,3 +1,11 @@
+sp-mem-throughput (0.4-1) unstable; urgency=low
+
+  * Fixes: NB#291129 - sp-mem-throughput build fails when it's compiled with
+    thumb
+  * Fixes: NB#296052 - symbian memory access function should be added
+
+ -- Tommi Rantala <ext-tommi.1.rantala@nokia.com>  Tue, 10 Jan 2012 14:22:12 +0200
+
 sp-mem-throughput (0.3) unstable; urgency=low
 
   * Change in reported numbers for memcpy() and strcpy(): take both read and
