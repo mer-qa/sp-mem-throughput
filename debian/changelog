@@ -1,3 +1,9 @@
+sp-mem-throughput (0.4.1) unstable; urgency=low
+
+  * Fix linking for --as-needed
+
+ -- Eero Tamminen <eero.tamminen@nokia.com>  Mon, 11 Jun 2012 13:22:12 +0300
+
 sp-mem-throughput (0.4-1) unstable; urgency=low
 
   * Fixes: NB#291129 - sp-mem-throughput build fails when it's compiled with
