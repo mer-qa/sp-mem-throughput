@@ -22,7 +22,7 @@ BuildRequires: python
  Results can be stored in CSV format for later analysis.
  
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
 make 
