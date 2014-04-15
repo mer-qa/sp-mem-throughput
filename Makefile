@@ -47,7 +47,6 @@ ARCH_OBJS += arch/arm/code-aurora-forum-memmove.o
 ARCH_OBJS += arch/arm/code-aurora-forum-memset.o
 ARCH_OBJS += arch/arm/android-memcpy.o
 ARCH_OBJS += arch/arm/android-memset.o
-ARCH_OBJS += arch/arm/android-strlen.o
 ARCH_OBJS += arch/arm/android-strcmp.o
 ARCH_OBJS += arch/arm/android-strcpy.o
 ARCH_OBJS += arch/arm/memcpy-aligned-arm.o
