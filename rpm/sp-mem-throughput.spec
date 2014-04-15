@@ -5,7 +5,7 @@ Summary: Memory throughput testing tool
 Group: Development/Tools
 License: GPLv2+
 URL: https://github.com/mer-qa/sp-mem-throughput
-Source: %{name}_%{version}.tar.gz
+Source: %{name}-%{version}.tar.gz
 BuildRequires: python
 
 %description
