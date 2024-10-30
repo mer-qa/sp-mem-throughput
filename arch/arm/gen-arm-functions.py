@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # Generates ARM assembler memcpy, memset and memory read routines for
 # benchmarking purposes.
@@ -130,35 +130,35 @@ if __name__ == "__main__":
         c = r + w
 
         m = 0
-        if n: m=32/n
+        if n: m=round(32/n)
 
         for f,b,r,s,h,reg in (("memcpy",c,2,template_copy,c_header_copy,register_copy),\
-	                      ("memset",w,1,template_write,c_header_write,register_write),\
-			      ("memread",r,1,template_read,c_header_read,register_read)):
+                              ("memset",w,1,template_write,c_header_write,register_write),\
+                              ("memread",r,1,template_read,c_header_read,register_read)):
             if m == 0: r = 0
             f = "arm_asm_%s_%d" % (f,n)
             l = l + 1
-            b = string.join(b*m, "\n")
-            s = string.replace(s, "<FUNC>", f)
-            s = string.replace(s, "<LOOP>", ".L%d"%l)
-            s = string.replace(s, "<BODY>", b)
+            b = '\n'.join(b*m)
+            s = s.replace("<FUNC>", f)
+            s = s.replace("<LOOP>", ".L%d"%l)
+            s = s.replace("<BODY>", b)
             asrc.append(s)
-	    hsrc.append(h % f)
-	    regfile.append(reg % (f, n))
+            hsrc.append(h % f)
+            regfile.append(reg % (f, n))
 
-	hsrc.append('')
+        hsrc.append('')
 
     asrc.append(epilogue)
-    asrc = string.join(asrc,'')
+    asrc = ''.join(asrc)
 
     hsrc.append("#endif /* ARM_ASM_ROUTINES_H */")
     hsrc.append('')
-    hsrc = string.join(hsrc,'\n')
+    hsrc = '\n'.join(hsrc)
 
     regfile.append('');
     regfile.append('#endif /* __arm__ */')
     regfile.append('');
-    regfile = string.join(regfile,'\n')
+    regfile = '\n'.join(regfile)
 
     open(base + ".S", "w").write(asrc)
     open(base + ".h", "w").write(hsrc)

@@ -1,12 +1,13 @@
 Name: sp-mem-throughput
 Version: 0.4.2
-Release: 0%{?dist}
+Release: 0
 Summary: Memory throughput testing tool
-Group: Development/Tools
 License: GPLv2+
 URL: https://github.com/mer-qa/sp-mem-throughput
 Source: %{name}-%{version}.tar.gz
-BuildRequires: python
+%ifarch %{arm}
+BuildRequires: python3-base
+%endif
 
 %description
  This is a tool for benchmarking memory throughput by different access
@@ -25,17 +26,12 @@ BuildRequires: python
 %setup -q
 
 %build
-make 
+%make_build
 
 %install
-rm -rf %{buildroot}
-make install DESTDIR=%{buildroot}
-
-%clean
-rm -rf %{buildroot}
+%make_install
 
 %files
-%defattr(-,root,root,-)
 %{_bindir}/sp-mem-throughput
 %{_mandir}/man1/sp-mem-throughput.1.gz
 %doc COPYING 
