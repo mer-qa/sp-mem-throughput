@@ -60,6 +60,7 @@ Test duration should be measured in test environment specific manner.
 Note5. Tests should be compiled with the best possible speed optimisation flags.
 */
 
+#include <stdlib.h> // for malloc()
 #include <string.h> // for memcpy() and memset()
 
 #define CACHE_LINESIZE      ((int)(32 / sizeof(int))) // cache line size (int)
