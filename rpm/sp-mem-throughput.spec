@@ -1,5 +1,5 @@
 Name: sp-mem-throughput
-Version: 0.4.3
+Version: 0.4.4
 Release: 0
 Summary: Memory throughput testing tool
 License: GPLv2+
